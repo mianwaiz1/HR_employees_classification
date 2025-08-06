@@ -5,7 +5,7 @@ from sklearn.preprocessing import StandardScaler
 import joblib  # for saving model
 
 # Load and prepare data
-df = pd.read_csv(r'D:\WAIZ CS\PROGRAMMING\PROGRAMES using python\DATA SCIENCE\DATA SCIENCE IN JUPYTER\machine learning\DATA\HR_employees_classification.csv')  # Change this to your actual file
+df = pd.read_csv('HR_employees_classification.csv')  # Change this to your actual file
 
 # Clean target
 df.drop(['Department' ,'salary' ,'promotion_last_5years' ,'left' ,'Work_accident' ,'last_evaluation'] ,axis=1 ,inplace=True)
@@ -39,3 +39,4 @@ model.fit(X_train, y_train)
 # Save model and scaler
 joblib.dump(model, 'employee_classifier.pkl')
 joblib.dump(scaler, 'scaler.pkl')
+
